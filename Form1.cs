@@ -9,7 +9,7 @@ namespace WinFormsApp1
             textBox1.ReadOnly = true;
             textBox4.ReadOnly = true;
             textBox4.Text = "add something!";
-            menuStrip1.BackColor = Color.Black;
+            menuStrip1.BackColor = Color.WhiteSmoke;
             menuStrip1.Items.Add("bleh");
             textBox4.Text = (menuStrip1.Items.ToString());
         }
