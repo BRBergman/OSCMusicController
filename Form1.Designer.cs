@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.Next = new System.Windows.Forms.Button();
-            this.Play = new System.Windows.Forms.Button();
             this.Prev = new System.Windows.Forms.Button();
+            this.Play = new System.Windows.Forms.Button();
+            this.Next = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -54,19 +54,19 @@
             this.splitContainer1.SplitterDistance = 118;
             this.splitContainer1.TabIndex = 0;
             // 
-            // Next
+            // Prev
             // 
-            this.Next.Location = new System.Drawing.Point(337, 240);
-            this.Next.Name = "Next";
-            this.Next.Size = new System.Drawing.Size(75, 23);
-            this.Next.TabIndex = 1;
-            this.Next.Text = "Next";
-            this.Next.UseVisualStyleBackColor = true;
-            this.Next.Click += new System.EventHandler(this.Next_Click);
+            this.Prev.Location = new System.Drawing.Point(179, 223);
+            this.Prev.Name = "Prev";
+            this.Prev.Size = new System.Drawing.Size(75, 23);
+            this.Prev.TabIndex = 3;
+            this.Prev.Text = "Prev";
+            this.Prev.UseVisualStyleBackColor = true;
+            this.Prev.Click += new System.EventHandler(this.Prev_Click);
             // 
             // Play
             // 
-            this.Play.Location = new System.Drawing.Point(256, 240);
+            this.Play.Location = new System.Drawing.Point(260, 223);
             this.Play.Name = "Play";
             this.Play.Size = new System.Drawing.Size(75, 23);
             this.Play.TabIndex = 2;
@@ -74,15 +74,15 @@
             this.Play.UseVisualStyleBackColor = true;
             this.Play.Click += new System.EventHandler(this.Play_Click);
             // 
-            // Prev
+            // Next
             // 
-            this.Prev.Location = new System.Drawing.Point(175, 240);
-            this.Prev.Name = "Prev";
-            this.Prev.Size = new System.Drawing.Size(75, 23);
-            this.Prev.TabIndex = 3;
-            this.Prev.Text = "Prev";
-            this.Prev.UseVisualStyleBackColor = true;
-            this.Prev.Click += new System.EventHandler(this.Prev_Click);
+            this.Next.Location = new System.Drawing.Point(341, 223);
+            this.Next.Name = "Next";
+            this.Next.Size = new System.Drawing.Size(75, 23);
+            this.Next.TabIndex = 1;
+            this.Next.Text = "Next";
+            this.Next.UseVisualStyleBackColor = true;
+            this.Next.Click += new System.EventHandler(this.Next_Click);
             // 
             // Form1
             // 
@@ -91,7 +91,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "BRBergman\'s Media Controller";
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);

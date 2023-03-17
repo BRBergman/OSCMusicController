@@ -5,10 +5,14 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
+
 namespace WinFormsApp1
 {
     internal class MediaPlayer
     {
+
         [DllImport("user32.dll")]
         public static extern void keybd_event(byte virtualKey, byte scanCode, uint flags, IntPtr extraInfo);
         public const int KEYEVENTF_EXTENTEDKEY = 1;

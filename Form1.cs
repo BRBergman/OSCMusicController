@@ -1,6 +1,10 @@
 namespace WinFormsApp1
 {
-
+    /*
+     * c# to windows media control      -- done
+     * osc to control the program       -- to do
+     * control media from vrcaht avi    -- to do
+    */
     public partial class Form1 : Form
     {
         
@@ -12,18 +16,6 @@ namespace WinFormsApp1
         {
 
         }
-        /*
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }*/
-
-
 
         private void Play_Click(object sender, EventArgs e)
         {
