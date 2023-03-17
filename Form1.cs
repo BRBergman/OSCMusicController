@@ -1,7 +1,9 @@
 namespace WinFormsApp1
 {
+
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
             InitializeComponent();
@@ -10,7 +12,31 @@ namespace WinFormsApp1
         {
 
         }
+        /*
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
 
-        
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }*/
+
+
+
+        private void Play_Click(object sender, EventArgs e)
+        {
+            MediaPlayer.play();
+        }
+        private void Next_Click(object sender, EventArgs e)
+        {
+            MediaPlayer.next();
+        }
+
+        private void Prev_Click(object sender, EventArgs e)
+        {
+            MediaPlayer.prev();
+        }
     }
 }
