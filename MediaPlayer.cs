@@ -3,15 +3,60 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using WNPReduxAdapterLibrary;
+
 
 
 
 
 namespace WinFormsApp1
 {
+    /*
+    class webnowplaying //https://www.nuget.org/packages/WNPRedux-Adapter-Library/
+    {
+        void init()
+        {
+            void logger(WNPRedux.LogType type, string message)
+            {
+                Console.WriteLine($"{type}: {message}");
+
+            }
+            WNPRedux.Initialize(1234, "1.0.0", logger);
+            
+
+        }
+        ~webnowplaying()
+        {
+            WNPRedux.Close();
+        }
+
+    }*/
     internal class MediaPlayer
     {
+        static void logger(WNPRedux.LogType type, string message)
+        {
+            Console.WriteLine($"{type}: {message}");
+        }
+        public MediaPlayer()
+        {
+            //open(1234);
+        }
+        ~MediaPlayer()
+        {
+            close();
+        }
+        public static void open(int port)
+        {
+            WNPRedux.Initialize(port, "1.0.0", logger);
+        }
+        public static void close()
+        {
+            WNPRedux.Close();
+        }
+    
 
         [DllImport("user32.dll")]
         public static extern void keybd_event(byte virtualKey, byte scanCode, uint flags, IntPtr extraInfo);
@@ -23,18 +68,22 @@ namespace WinFormsApp1
 
         public static void prev()
         {
+            WNPRedux.mediaEvents.Previous();
             // Jump to previous track
-            keybd_event(VK_MEDIA_PREV_TRACK, 0, KEYEVENTF_EXTENTEDKEY, IntPtr.Zero);
+            //keybd_event(VK_MEDIA_PREV_TRACK, 0, KEYEVENTF_EXTENTEDKEY, IntPtr.Zero);
         }
         public static void next()
         {
-            // Jump to previous track
-            keybd_event(VK_MEDIA_NEXT_TRACK, 0, KEYEVENTF_EXTENTEDKEY, IntPtr.Zero);
+            WNPRedux.mediaEvents.Next();
+            // Jump to next track
+            //keybd_event(VK_MEDIA_NEXT_TRACK, 0, KEYEVENTF_EXTENTEDKEY, IntPtr.Zero);
         }
         public static void play()//or pause
         {
-            // Jump to previous track
-            keybd_event(VK_MEDIA_PLAY_PAUSE, 0, KEYEVENTF_EXTENTEDKEY, IntPtr.Zero);
+            WNPRedux.mediaEvents.TogglePlaying();
+            // Pause / Play
+            //keybd_event(VK_MEDIA_PLAY_PAUSE, 0, KEYEVENTF_EXTENTEDKEY, IntPtr.Zero);
+            
         }
 
 
