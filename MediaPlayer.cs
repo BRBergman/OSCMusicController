@@ -40,10 +40,6 @@ namespace WinFormsApp1
         {
             Console.WriteLine($"{type}: {message}");
         }
-        public MediaPlayer()
-        {
-            //open(1234);
-        }
         ~MediaPlayer()
         {
             close();

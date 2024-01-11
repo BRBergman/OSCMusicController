@@ -20,116 +20,145 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
 
-        /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.Close = new System.Windows.Forms.Button();
-            this.Open = new System.Windows.Forms.Button();
-            this.Prev = new System.Windows.Forms.Button();
-            this.Play = new System.Windows.Forms.Button();
-            this.Next = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.Close);
-            this.splitContainer1.Panel2.Controls.Add(this.Open);
-            this.splitContainer1.Panel2.Controls.Add(this.Prev);
-            this.splitContainer1.Panel2.Controls.Add(this.Play);
-            this.splitContainer1.Panel2.Controls.Add(this.Next);
-            this.splitContainer1.Panel2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.splitContainer1.Size = new System.Drawing.Size(800, 450);
-            this.splitContainer1.SplitterDistance = 118;
-            this.splitContainer1.TabIndex = 0;
-            // 
-            // Close
-            // 
-            this.Close.Location = new System.Drawing.Point(179, 131);
-            this.Close.Name = "Close";
-            this.Close.Size = new System.Drawing.Size(155, 23);
-            this.Close.TabIndex = 5;
-            this.Close.Text = "Close Connection";
-            this.Close.UseVisualStyleBackColor = true;
-            this.Close.Click += new System.EventHandler(this.Close_Click);
-            // 
-            // Open
-            // 
-            this.Open.Location = new System.Drawing.Point(180, 102);
-            this.Open.Name = "Open";
-            this.Open.Size = new System.Drawing.Size(155, 23);
-            this.Open.TabIndex = 4;
-            this.Open.Text = "Open Connection";
-            this.Open.UseVisualStyleBackColor = true;
-            this.Open.Click += new System.EventHandler(this.Open_Click);
-            // 
-            // Prev
-            // 
-            this.Prev.Location = new System.Drawing.Point(179, 223);
-            this.Prev.Name = "Prev";
-            this.Prev.Size = new System.Drawing.Size(75, 23);
-            this.Prev.TabIndex = 3;
-            this.Prev.Text = "Prev";
-            this.Prev.UseVisualStyleBackColor = true;
-            this.Prev.Click += new System.EventHandler(this.Prev_Click);
-            // 
-            // Play
-            // 
-            this.Play.Location = new System.Drawing.Point(260, 223);
-            this.Play.Name = "Play";
-            this.Play.Size = new System.Drawing.Size(75, 23);
-            this.Play.TabIndex = 2;
-            this.Play.Text = "Play/Pause";
-            this.Play.UseVisualStyleBackColor = true;
-            this.Play.Click += new System.EventHandler(this.Play_Click);
-            // 
-            // Next
-            // 
-            this.Next.Location = new System.Drawing.Point(341, 223);
-            this.Next.Name = "Next";
-            this.Next.Size = new System.Drawing.Size(75, 23);
-            this.Next.TabIndex = 1;
-            this.Next.Text = "Next";
-            this.Next.UseVisualStyleBackColor = true;
-            this.Next.Click += new System.EventHandler(this.Next_Click);
-            // 
-            // Form1
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.splitContainer1);
-            this.Name = "Form1";
-            this.Text = "BRBergman\'s Media Controller";
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            this.ResumeLayout(false);
+		/// <summary>
+		///  Required method for Designer support - do not modify
+		///  the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
+			splitContainer1 = new SplitContainer();
+			OnOffBox = new CheckBox();
+			PortTextBox = new TextBox();
+			Close = new Button();
+			Open = new Button();
+			Prev = new Button();
+			Play = new Button();
+			Next = new Button();
+			((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+			splitContainer1.Panel2.SuspendLayout();
+			splitContainer1.SuspendLayout();
+			SuspendLayout();
+			// 
+			// splitContainer1
+			// 
+			splitContainer1.Dock = DockStyle.Fill;
+			splitContainer1.Location = new Point(0, 0);
+			splitContainer1.Name = "splitContainer1";
+			// 
+			// splitContainer1.Panel2
+			// 
+			splitContainer1.Panel2.Controls.Add(OnOffBox);
+			splitContainer1.Panel2.Controls.Add(PortTextBox);
+			splitContainer1.Panel2.Controls.Add(Close);
+			splitContainer1.Panel2.Controls.Add(Open);
+			splitContainer1.Panel2.Controls.Add(Prev);
+			splitContainer1.Panel2.Controls.Add(Play);
+			splitContainer1.Panel2.Controls.Add(Next);
+			splitContainer1.Panel2.ForeColor = SystemColors.ControlText;
+			splitContainer1.Panel2.Paint += splitContainer1_Panel2_Paint;
+			splitContainer1.Size = new Size(800, 450);
+			splitContainer1.SplitterDistance = 118;
+			splitContainer1.TabIndex = 0;
+			// 
+			// OnOffBox
+			// 
+			OnOffBox.AutoCheck = false;
+			OnOffBox.AutoSize = true;
+			OnOffBox.Location = new Point(178, 184);
+			OnOffBox.Name = "OnOffBox";
+			OnOffBox.RightToLeft = RightToLeft.Yes;
+			OnOffBox.Size = new Size(76, 19);
+			OnOffBox.TabIndex = 7;
+			OnOffBox.Text = "On or Off";
+			OnOffBox.UseVisualStyleBackColor = true;			
+			// 
+			// PortTextBox
+			// 
+			PortTextBox.Location = new Point(260, 182);
+			PortTextBox.Name = "PortTextBox";
+			PortTextBox.PlaceholderText = "Enter Port";
+			PortTextBox.Size = new Size(100, 23);
+			PortTextBox.TabIndex = 6;
+			PortTextBox.Text = "1234";
+			PortTextBox.TextChanged += PortTextBox_TextChanged;
+			PortTextBox.KeyPress += PortTextBox_KeyPress;
+			// 
+			// Close
+			// 
+			Close.Location = new Point(179, 131);
+			Close.Name = "Close";
+			Close.Size = new Size(155, 23);
+			Close.TabIndex = 5;
+			Close.Text = "Close Connection";
+			Close.UseVisualStyleBackColor = true;
+			Close.Click += Close_Click;
+			// 
+			// Open
+			// 
+			Open.Location = new Point(180, 102);
+			Open.Name = "Open";
+			Open.Size = new Size(155, 23);
+			Open.TabIndex = 4;
+			Open.Text = "Open Connection";
+			Open.UseVisualStyleBackColor = true;
+			Open.Click += Open_Click;
+			// 
+			// Prev
+			// 
+			Prev.Location = new Point(179, 223);
+			Prev.Name = "Prev";
+			Prev.Size = new Size(75, 23);
+			Prev.TabIndex = 3;
+			Prev.Text = "Prev";
+			Prev.UseVisualStyleBackColor = true;
+			Prev.Click += Prev_Click;
+			// 
+			// Play
+			// 
+			Play.Location = new Point(260, 223);
+			Play.Name = "Play";
+			Play.Size = new Size(75, 23);
+			Play.TabIndex = 2;
+			Play.Text = "Play/Pause";
+			Play.UseVisualStyleBackColor = true;
+			Play.Click += Play_Click;
+			// 
+			// Next
+			// 
+			Next.Location = new Point(341, 223);
+			Next.Name = "Next";
+			Next.Size = new Size(75, 23);
+			Next.TabIndex = 1;
+			Next.Text = "Next";
+			Next.UseVisualStyleBackColor = true;
+			Next.Click += Next_Click;
+			// 
+			// Form1
+			// 
+			AutoScaleDimensions = new SizeF(7F, 15F);
+			AutoScaleMode = AutoScaleMode.Font;
+			ClientSize = new Size(800, 450);
+			Controls.Add(splitContainer1);
+			Name = "Form1";
+			Text = "BRBergman's Media Controller";
+			splitContainer1.Panel2.ResumeLayout(false);
+			splitContainer1.Panel2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
+			splitContainer1.ResumeLayout(false);
+			ResumeLayout(false);
+		}
 
-        }
+		#endregion
 
-        #endregion
-
-        private SplitContainer splitContainer1;
+		private SplitContainer splitContainer1;
         private Button Next;
         private Button Play;
         private Button Prev;
         private Button Open;
         private Button Close;
-    }
+		private TextBox PortTextBox;
+		private CheckBox OnOffBox;
+	}
 }
