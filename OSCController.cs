@@ -9,7 +9,7 @@ namespace WinFormsApp1
 	internal class OSCController
 	{
 		CoreOSC.OscMessage Message = new();
-		Message
+
 		//https://github.com/dastevens/CoreOSC
 	}
 
