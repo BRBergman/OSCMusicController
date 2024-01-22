@@ -30,16 +30,16 @@ namespace WinFormsApp1
 
 		private void Play_Click(object sender, EventArgs e)
 		{
-			WNPRedux.mediaEvents.TogglePlaying();
+			MediaPlayer.PausePlay();
 		}
 		private void Next_Click(object sender, EventArgs e)
 		{
-			WNPRedux.mediaEvents.Next();
+			MediaPlayer.Next();
 		}
 
 		private void Prev_Click(object sender, EventArgs e)
 		{
-			WNPRedux.mediaEvents.Previous();
+			MediaPlayer.Prev();
 		}
 		private static void logger(WNPRedux.LogType type, string message)
 		{

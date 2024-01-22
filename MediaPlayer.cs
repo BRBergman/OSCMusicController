@@ -62,19 +62,19 @@ namespace WinFormsApp1
         public const int VK_MEDIA_PLAY_PAUSE = 0xB3;// code to play or pause a song
         public const int VK_MEDIA_PREV_TRACK = 0xB1;// code to jump to prev track
 
-        public static void prev()
+        public static void Prev()
         {
             WNPRedux.mediaEvents.Previous();
             // Jump to previous track
             //keybd_event(VK_MEDIA_PREV_TRACK, 0, KEYEVENTF_EXTENTEDKEY, IntPtr.Zero);
         }
-        public static void next()
+        public static void Next()
         {
             WNPRedux.mediaEvents.Next();
             // Jump to next track
             //keybd_event(VK_MEDIA_NEXT_TRACK, 0, KEYEVENTF_EXTENTEDKEY, IntPtr.Zero);
         }
-        public static void play()//or pause
+        public static void PausePlay()
         {
             WNPRedux.mediaEvents.TogglePlaying();
             // Pause / Play
