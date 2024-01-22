@@ -30,16 +30,16 @@ namespace WinFormsApp1
 
 		private void Play_Click(object sender, EventArgs e)
 		{
-			MediaPlayer.PausePlay();
+			MediaPlayer.PausePlay(WNPEnabled.Checked);
 		}
 		private void Next_Click(object sender, EventArgs e)
 		{
-			MediaPlayer.Next();
+			MediaPlayer.Next(WNPEnabled.Checked);
 		}
 
 		private void Prev_Click(object sender, EventArgs e)
 		{
-			MediaPlayer.Prev();
+			MediaPlayer.Prev(WNPEnabled.Checked);
 		}
 		private static void logger(WNPRedux.LogType type, string message)
 		{
@@ -74,6 +74,9 @@ namespace WinFormsApp1
 			}
 		}
 
-	
+		private void WNPEnabled_CheckedChanged(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

@@ -62,24 +62,36 @@ namespace WinFormsApp1
         public const int VK_MEDIA_PLAY_PAUSE = 0xB3;// code to play or pause a song
         public const int VK_MEDIA_PREV_TRACK = 0xB1;// code to jump to prev track
 
-        public static void Prev()
+        public static void Prev(bool WNP)
         {
-            WNPRedux.mediaEvents.Previous();
-            // Jump to previous track
-            //keybd_event(VK_MEDIA_PREV_TRACK, 0, KEYEVENTF_EXTENTEDKEY, IntPtr.Zero);
-        }
-        public static void Next()
+            if (WNP)
+            {
+                WNPRedux.mediaEvents.Previous();
+            }
+            else
+            {
+				keybd_event(VK_MEDIA_PREV_TRACK, 0, KEYEVENTF_EXTENTEDKEY, IntPtr.Zero);
+			}
+		}
+        public static void Next(bool WNP)
+        {   
+            if(WNP)
+            { WNPRedux.mediaEvents.Next(); }
+            else
+            {
+			    keybd_event(VK_MEDIA_NEXT_TRACK, 0, KEYEVENTF_EXTENTEDKEY, IntPtr.Zero);
+			}
+		}
+        public static void PausePlay(bool WNP)
         {
-            WNPRedux.mediaEvents.Next();
-            // Jump to next track
-            //keybd_event(VK_MEDIA_NEXT_TRACK, 0, KEYEVENTF_EXTENTEDKEY, IntPtr.Zero);
-        }
-        public static void PausePlay()
-        {
-            WNPRedux.mediaEvents.TogglePlaying();
-            // Pause / Play
-            //keybd_event(VK_MEDIA_PLAY_PAUSE, 0, KEYEVENTF_EXTENTEDKEY, IntPtr.Zero);
-            
+            if (WNP)
+            {
+                WNPRedux.mediaEvents.TogglePlaying();
+            }
+            else
+            {
+                keybd_event(VK_MEDIA_PLAY_PAUSE, 0, KEYEVENTF_EXTENTEDKEY, IntPtr.Zero);
+            }
         }
 
 

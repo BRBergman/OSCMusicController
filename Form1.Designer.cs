@@ -31,11 +31,12 @@
 			splitContainer1 = new SplitContainer();
 			OnOffBox = new CheckBox();
 			PortTextBox = new TextBox();
-			Close = new Button();
-			Open = new Button();
+			CloseWNP = new Button();
+			OpenWNP = new Button();
 			Prev = new Button();
 			Play = new Button();
 			Next = new Button();
+			WNPEnabled = new CheckBox();
 			((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
 			splitContainer1.Panel2.SuspendLayout();
 			splitContainer1.SuspendLayout();
@@ -49,10 +50,11 @@
 			// 
 			// splitContainer1.Panel2
 			// 
+			splitContainer1.Panel2.Controls.Add(WNPEnabled);
 			splitContainer1.Panel2.Controls.Add(OnOffBox);
 			splitContainer1.Panel2.Controls.Add(PortTextBox);
-			splitContainer1.Panel2.Controls.Add(Close);
-			splitContainer1.Panel2.Controls.Add(Open);
+			splitContainer1.Panel2.Controls.Add(CloseWNP);
+			splitContainer1.Panel2.Controls.Add(OpenWNP);
 			splitContainer1.Panel2.Controls.Add(Prev);
 			splitContainer1.Panel2.Controls.Add(Play);
 			splitContainer1.Panel2.Controls.Add(Next);
@@ -72,7 +74,7 @@
 			OnOffBox.Size = new Size(76, 19);
 			OnOffBox.TabIndex = 7;
 			OnOffBox.Text = "On or Off";
-			OnOffBox.UseVisualStyleBackColor = true;			
+			OnOffBox.UseVisualStyleBackColor = true;
 			// 
 			// PortTextBox
 			// 
@@ -85,25 +87,25 @@
 			PortTextBox.TextChanged += PortTextBox_TextChanged;
 			PortTextBox.KeyPress += PortTextBox_KeyPress;
 			// 
-			// Close
+			// CloseWNP
 			// 
-			Close.Location = new Point(179, 131);
-			Close.Name = "Close";
-			Close.Size = new Size(155, 23);
-			Close.TabIndex = 5;
-			Close.Text = "Close Connection";
-			Close.UseVisualStyleBackColor = true;
-			Close.Click += Close_Click;
+			CloseWNP.Location = new Point(179, 131);
+			CloseWNP.Name = "CloseWNP";
+			CloseWNP.Size = new Size(155, 23);
+			CloseWNP.TabIndex = 5;
+			CloseWNP.Text = "Close Connection";
+			CloseWNP.UseVisualStyleBackColor = true;
+			CloseWNP.Click += Close_Click;
 			// 
-			// Open
+			// OpenWNP
 			// 
-			Open.Location = new Point(180, 102);
-			Open.Name = "Open";
-			Open.Size = new Size(155, 23);
-			Open.TabIndex = 4;
-			Open.Text = "Open Connection";
-			Open.UseVisualStyleBackColor = true;
-			Open.Click += Open_Click;
+			OpenWNP.Location = new Point(180, 102);
+			OpenWNP.Name = "OpenWNP";
+			OpenWNP.Size = new Size(155, 23);
+			OpenWNP.TabIndex = 4;
+			OpenWNP.Text = "Open Connection";
+			OpenWNP.UseVisualStyleBackColor = true;
+			OpenWNP.Click += Open_Click;
 			// 
 			// Prev
 			// 
@@ -135,6 +137,19 @@
 			Next.UseVisualStyleBackColor = true;
 			Next.Click += Next_Click;
 			// 
+			// WNPEnabled
+			// 
+			WNPEnabled.AutoSize = true;
+			WNPEnabled.Checked = true;
+			WNPEnabled.CheckState = CheckState.Checked;
+			WNPEnabled.Location = new Point(223, 75);
+			WNPEnabled.Name = "WNPEnabled";
+			WNPEnabled.Size = new Size(120, 19);
+			WNPEnabled.TabIndex = 8;
+			WNPEnabled.Text = "Web Now Playing";
+			WNPEnabled.UseVisualStyleBackColor = true;
+			WNPEnabled.CheckedChanged += WNPEnabled_CheckedChanged;
+			// 
 			// Form1
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
@@ -156,9 +171,10 @@
         private Button Next;
         private Button Play;
         private Button Prev;
-        private Button Open;
-        private Button Close;
+        private Button OpenWNP;
+        private Button CloseWNP;
 		private TextBox PortTextBox;
 		private CheckBox OnOffBox;
+		private CheckBox WNPEnabled;
 	}
 }
