@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
 			splitContainer1 = new SplitContainer();
+			WNPEnabled = new CheckBox();
 			OnOffBox = new CheckBox();
 			PortTextBox = new TextBox();
 			CloseWNP = new Button();
@@ -36,7 +37,7 @@
 			Prev = new Button();
 			Play = new Button();
 			Next = new Button();
-			WNPEnabled = new CheckBox();
+			OSCEnable = new CheckBox();
 			((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
 			splitContainer1.Panel2.SuspendLayout();
 			splitContainer1.SuspendLayout();
@@ -50,6 +51,7 @@
 			// 
 			// splitContainer1.Panel2
 			// 
+			splitContainer1.Panel2.Controls.Add(OSCEnable);
 			splitContainer1.Panel2.Controls.Add(WNPEnabled);
 			splitContainer1.Panel2.Controls.Add(OnOffBox);
 			splitContainer1.Panel2.Controls.Add(PortTextBox);
@@ -63,6 +65,19 @@
 			splitContainer1.Size = new Size(800, 450);
 			splitContainer1.SplitterDistance = 118;
 			splitContainer1.TabIndex = 0;
+			// 
+			// WNPEnabled
+			// 
+			WNPEnabled.AutoSize = true;
+			WNPEnabled.Checked = true;
+			WNPEnabled.CheckState = CheckState.Checked;
+			WNPEnabled.Location = new Point(223, 75);
+			WNPEnabled.Name = "WNPEnabled";
+			WNPEnabled.Size = new Size(120, 19);
+			WNPEnabled.TabIndex = 8;
+			WNPEnabled.Text = "Web Now Playing";
+			WNPEnabled.UseVisualStyleBackColor = true;
+			WNPEnabled.CheckedChanged += WNPEnabled_CheckedChanged;
 			// 
 			// OnOffBox
 			// 
@@ -137,18 +152,16 @@
 			Next.UseVisualStyleBackColor = true;
 			Next.Click += Next_Click;
 			// 
-			// WNPEnabled
+			// OSCEnable
 			// 
-			WNPEnabled.AutoSize = true;
-			WNPEnabled.Checked = true;
-			WNPEnabled.CheckState = CheckState.Checked;
-			WNPEnabled.Location = new Point(223, 75);
-			WNPEnabled.Name = "WNPEnabled";
-			WNPEnabled.Size = new Size(120, 19);
-			WNPEnabled.TabIndex = 8;
-			WNPEnabled.Text = "Web Now Playing";
-			WNPEnabled.UseVisualStyleBackColor = true;
-			WNPEnabled.CheckedChanged += WNPEnabled_CheckedChanged;
+			OSCEnable.AutoSize = true;
+			OSCEnable.Location = new Point(240, 267);
+			OSCEnable.Name = "OSCEnable";
+			OSCEnable.Size = new Size(87, 19);
+			OSCEnable.TabIndex = 9;
+			OSCEnable.Text = "Enable OSC";
+			OSCEnable.UseVisualStyleBackColor = true;
+			OSCEnable.CheckedChanged += OSCEnable_CheckedChanged;
 			// 
 			// Form1
 			// 
@@ -176,5 +189,6 @@
 		private TextBox PortTextBox;
 		private CheckBox OnOffBox;
 		private CheckBox WNPEnabled;
+		private CheckBox OSCEnable;
 	}
 }

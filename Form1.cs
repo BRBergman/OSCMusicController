@@ -14,10 +14,15 @@ namespace WinFormsApp1
     */
 	public partial class Form1 : Form
 	{
+		OSCController oscController;
 
 		public Form1()
 		{
+
 			InitializeComponent();
+			oscController = new();	
+			Thread myThread = new Thread(new ThreadStart(oscController.oscReceive));
+			myThread.Start();
 		}
 		~Form1()
 		{
@@ -30,16 +35,16 @@ namespace WinFormsApp1
 
 		private void Play_Click(object sender, EventArgs e)
 		{
-			MediaPlayer.PausePlay(WNPEnabled.Checked);
+			MediaPlayer.PausePlay();
 		}
 		private void Next_Click(object sender, EventArgs e)
 		{
-			MediaPlayer.Next(WNPEnabled.Checked);
+			MediaPlayer.Next();
 		}
 
 		private void Prev_Click(object sender, EventArgs e)
 		{
-			MediaPlayer.Prev(WNPEnabled.Checked);
+			MediaPlayer.Prev();
 		}
 		private static void logger(WNPRedux.LogType type, string message)
 		{
@@ -76,7 +81,14 @@ namespace WinFormsApp1
 
 		private void WNPEnabled_CheckedChanged(object sender, EventArgs e)
 		{
+			MediaPlayer.WebNowPlaying = WNPEnabled.Checked;
+		}
+
+		private void OSCEnable_CheckedChanged(object sender, EventArgs e)
+		{
+			
 
 		}
+				
 	}
 }
