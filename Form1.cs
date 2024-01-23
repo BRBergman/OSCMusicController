@@ -9,8 +9,10 @@ namespace WinFormsApp1
      * c# to webnowplaying media control    -- done
      * webnowplaying spotify support        -- done
      * text box of currently playing song   -- to do
-     * osc to control the program           -- to do
+     * osc to control the program           -- done
      * control media from vrcaht avi        -- to do
+     * send the current song to vrc			-- to do
+     * send the duration to vrc				-- to do
     */
 	public partial class Form1 : Form
 	{
@@ -20,7 +22,7 @@ namespace WinFormsApp1
 		{
 
 			InitializeComponent();
-			oscController = new();	
+			oscController = new();
 			Thread myThread = new Thread(new ThreadStart(oscController.oscReceive));
 			myThread.Start();
 		}
@@ -86,9 +88,13 @@ namespace WinFormsApp1
 
 		private void OSCEnable_CheckedChanged(object sender, EventArgs e)
 		{
-			
+
 
 		}
-				
+
+		private void textBox2_TextChanged(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

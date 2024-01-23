@@ -12,10 +12,10 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace WinFormsApp1
 {
-	class OSCController
+	class OSCController// https://opensoundcontrol.stanford.edu/spec-1_0.html
 	{
 		static IPAddress localip = IPAddress.Parse("127.0.0.1");
-		static int port = 9000;
+		static int port = 9001;
 		static Rug.Osc.OscSender OSCSender = new(localip, port);
 		static Rug.Osc.OscReceiver OSCReceiver = new(localip, port);
 		public OSCController()

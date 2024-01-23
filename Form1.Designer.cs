@@ -29,6 +29,8 @@
 		private void InitializeComponent()
 		{
 			splitContainer1 = new SplitContainer();
+			textBox1 = new TextBox();
+			OSCEnable = new CheckBox();
 			WNPEnabled = new CheckBox();
 			OnOffBox = new CheckBox();
 			PortTextBox = new TextBox();
@@ -37,7 +39,7 @@
 			Prev = new Button();
 			Play = new Button();
 			Next = new Button();
-			OSCEnable = new CheckBox();
+			textBox2 = new TextBox();
 			((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
 			splitContainer1.Panel2.SuspendLayout();
 			splitContainer1.SuspendLayout();
@@ -51,6 +53,8 @@
 			// 
 			// splitContainer1.Panel2
 			// 
+			splitContainer1.Panel2.Controls.Add(textBox2);
+			splitContainer1.Panel2.Controls.Add(textBox1);
 			splitContainer1.Panel2.Controls.Add(OSCEnable);
 			splitContainer1.Panel2.Controls.Add(WNPEnabled);
 			splitContainer1.Panel2.Controls.Add(OnOffBox);
@@ -65,6 +69,26 @@
 			splitContainer1.Size = new Size(800, 450);
 			splitContainer1.SplitterDistance = 118;
 			splitContainer1.TabIndex = 0;
+			// 
+			// textBox1
+			// 
+			textBox1.Location = new Point(178, 292);
+			textBox1.Name = "textBox1";
+			textBox1.ReadOnly = true;
+			textBox1.Size = new Size(238, 23);
+			textBox1.TabIndex = 10;
+			textBox1.Text = "Its on OSC port 9001 (no you cant change it)";
+			// 
+			// OSCEnable
+			// 
+			OSCEnable.AutoSize = true;
+			OSCEnable.Location = new Point(240, 267);
+			OSCEnable.Name = "OSCEnable";
+			OSCEnable.Size = new Size(87, 19);
+			OSCEnable.TabIndex = 9;
+			OSCEnable.Text = "Enable OSC";
+			OSCEnable.UseVisualStyleBackColor = true;
+			OSCEnable.CheckedChanged += OSCEnable_CheckedChanged;
 			// 
 			// WNPEnabled
 			// 
@@ -152,16 +176,15 @@
 			Next.UseVisualStyleBackColor = true;
 			Next.Click += Next_Click;
 			// 
-			// OSCEnable
+			// textBox2
 			// 
-			OSCEnable.AutoSize = true;
-			OSCEnable.Location = new Point(240, 267);
-			OSCEnable.Name = "OSCEnable";
-			OSCEnable.Size = new Size(87, 19);
-			OSCEnable.TabIndex = 9;
-			OSCEnable.Text = "Enable OSC";
-			OSCEnable.UseVisualStyleBackColor = true;
-			OSCEnable.CheckedChanged += OSCEnable_CheckedChanged;
+			textBox2.Location = new Point(169, 321);
+			textBox2.Name = "textBox2";
+			textBox2.ReadOnly = true;
+			textBox2.Size = new Size(266, 23);
+			textBox2.TabIndex = 11;
+			textBox2.Text = "Its LocalHost ip 127.0.0.1 (you still cant change it)";
+			textBox2.TextChanged += textBox2_TextChanged;
 			// 
 			// Form1
 			// 
@@ -190,5 +213,7 @@
 		private CheckBox OnOffBox;
 		private CheckBox WNPEnabled;
 		private CheckBox OSCEnable;
+		private TextBox textBox1;
+		private TextBox textBox2;
 	}
 }

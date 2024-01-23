@@ -20,7 +20,7 @@ namespace WinFormsApp1// just pull this up in vscode or something
 
 			IPAddress localip = IPAddress.Parse("127.0.0.1"); // idk if this even works
 			Console.WriteLine(localip.ToString());
-			int port = 9000;
+			int port = 9001;
 
 			using (var sender = new OscSender(localip, port))
 			{
