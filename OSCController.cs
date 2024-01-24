@@ -42,20 +42,47 @@ namespace WinFormsApp1
 					if (OSCReceiver.State == OscSocketState.Connected)
 					{
 						OscPacket packet = OSCReceiver.Receive();
-						var message = packet.ToString().Split(',')[1];
-
-						switch (message.Trim(new char[] { '"', '\\', '\"', ' ' }))
+						Console.WriteLine(packet.ToString());
+						string[] OSCString = packet.ToString().Split(',');
+						string Address = OSCString[0];
+						string[] message = new string[OSCString.Length - 1];
+						for (int i = 1; i < OSCString.Length; i++) 
 						{
-							case "PausePlay":
-								MediaPlayer.PausePlay();
-								break;
-							case "Next":
-								MediaPlayer.Next();
-								break;
-							case "Prev":
-								MediaPlayer.Prev();
-								break;
+							message[i-1] = OSCString[i].Trim(new char[] { '"', ' ' });
 						}
+
+						foreach (string str in message)
+						{
+							/*switch (str)
+							{
+								case "PausePlay":
+									MediaPlayer.PausePlay();
+									break;
+								case "Next":
+									MediaPlayer.Next();
+									break;
+								case "Prev":
+									MediaPlayer.Prev();
+									break;
+							}*/
+							if (Address == "/avatar/parameters/VRCEmote")
+							{
+
+								if (str == "1")
+								{
+									MediaPlayer.PausePlay();
+								}
+								if ( str == "2")
+								{
+									MediaPlayer.Next();
+								}
+								if ( str == "3")
+								{
+									MediaPlayer.Prev();
+								}
+							}
+						}
+						
 					}
 				}
 			}
