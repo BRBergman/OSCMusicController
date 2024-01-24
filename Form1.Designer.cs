@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
 			splitContainer1 = new SplitContainer();
+			textBox2 = new TextBox();
 			textBox1 = new TextBox();
 			OSCEnable = new CheckBox();
 			WNPEnabled = new CheckBox();
@@ -39,7 +40,6 @@
 			Prev = new Button();
 			Play = new Button();
 			Next = new Button();
-			textBox2 = new TextBox();
 			((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
 			splitContainer1.Panel2.SuspendLayout();
 			splitContainer1.SuspendLayout();
@@ -70,6 +70,16 @@
 			splitContainer1.SplitterDistance = 118;
 			splitContainer1.TabIndex = 0;
 			// 
+			// textBox2
+			// 
+			textBox2.Location = new Point(169, 321);
+			textBox2.Name = "textBox2";
+			textBox2.ReadOnly = true;
+			textBox2.Size = new Size(266, 23);
+			textBox2.TabIndex = 11;
+			textBox2.Text = "Its LocalHost ip 127.0.0.1 (you still cant change it)";
+			textBox2.TextChanged += textBox2_TextChanged;
+			// 
 			// textBox1
 			// 
 			textBox1.Location = new Point(178, 292);
@@ -82,6 +92,8 @@
 			// OSCEnable
 			// 
 			OSCEnable.AutoSize = true;
+			OSCEnable.Checked = true;
+			OSCEnable.CheckState = CheckState.Checked;
 			OSCEnable.Location = new Point(240, 267);
 			OSCEnable.Name = "OSCEnable";
 			OSCEnable.Size = new Size(87, 19);
@@ -93,8 +105,6 @@
 			// WNPEnabled
 			// 
 			WNPEnabled.AutoSize = true;
-			WNPEnabled.Checked = true;
-			WNPEnabled.CheckState = CheckState.Checked;
 			WNPEnabled.Location = new Point(223, 75);
 			WNPEnabled.Name = "WNPEnabled";
 			WNPEnabled.Size = new Size(120, 19);
@@ -107,12 +117,12 @@
 			// 
 			OnOffBox.AutoCheck = false;
 			OnOffBox.AutoSize = true;
-			OnOffBox.Location = new Point(178, 184);
+			OnOffBox.Location = new Point(148, 184);
 			OnOffBox.Name = "OnOffBox";
 			OnOffBox.RightToLeft = RightToLeft.Yes;
-			OnOffBox.Size = new Size(76, 19);
+			OnOffBox.Size = new Size(106, 19);
 			OnOffBox.TabIndex = 7;
-			OnOffBox.Text = "On or Off";
+			OnOffBox.Text = "WNP On or Off";
 			OnOffBox.UseVisualStyleBackColor = true;
 			// 
 			// PortTextBox
@@ -132,7 +142,7 @@
 			CloseWNP.Name = "CloseWNP";
 			CloseWNP.Size = new Size(155, 23);
 			CloseWNP.TabIndex = 5;
-			CloseWNP.Text = "Close Connection";
+			CloseWNP.Text = "Close WNP Connection";
 			CloseWNP.UseVisualStyleBackColor = true;
 			CloseWNP.Click += Close_Click;
 			// 
@@ -142,7 +152,7 @@
 			OpenWNP.Name = "OpenWNP";
 			OpenWNP.Size = new Size(155, 23);
 			OpenWNP.TabIndex = 4;
-			OpenWNP.Text = "Open Connection";
+			OpenWNP.Text = "Open WNP Connection";
 			OpenWNP.UseVisualStyleBackColor = true;
 			OpenWNP.Click += Open_Click;
 			// 
@@ -175,16 +185,6 @@
 			Next.Text = "Next";
 			Next.UseVisualStyleBackColor = true;
 			Next.Click += Next_Click;
-			// 
-			// textBox2
-			// 
-			textBox2.Location = new Point(169, 321);
-			textBox2.Name = "textBox2";
-			textBox2.ReadOnly = true;
-			textBox2.Size = new Size(266, 23);
-			textBox2.TabIndex = 11;
-			textBox2.Text = "Its LocalHost ip 127.0.0.1 (you still cant change it)";
-			textBox2.TextChanged += textBox2_TextChanged;
 			// 
 			// Form1
 			// 
