@@ -14,9 +14,6 @@ namespace WinFormsApp1// just pull this up in vscode or something
 			// See https://aka.ms/new-console-template for more information
 			
 
-			const string PausePlay = "PausePlay";
-			const string Next = "Next";
-			const string Prev = "Prev";
 
 			IPAddress localip = IPAddress.Parse("127.0.0.1"); // idk if this even works
 			Console.WriteLine(localip.ToString());
@@ -29,7 +26,7 @@ namespace WinFormsApp1// just pull this up in vscode or something
 				if (sender.State == OscSocketState.Connected)
 				{
 					Console.WriteLine("connectes=");
-					sender.Send(new OscMessage("/BergOSC/MusicBox", PausePlay));
+					sender.Send(new OscMessage("/avatar/parameters/VRCEmote", "1"));
 				}
 				sender.Close();
 			}

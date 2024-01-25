@@ -194,6 +194,8 @@
 			Controls.Add(splitContainer1);
 			Name = "Form1";
 			Text = "BRBergman's Media Controller";
+			FormClosed += Form1_FormClosed;
+			Load += Form1_Load;
 			splitContainer1.Panel2.ResumeLayout(false);
 			splitContainer1.Panel2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();

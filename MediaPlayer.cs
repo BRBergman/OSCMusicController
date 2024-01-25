@@ -19,7 +19,7 @@ namespace WinFormsApp1
     
     internal class MediaPlayer
     {
-        public static bool WebNowPlaying = true;
+        public static bool WebNowPlaying = false;
         static void logger(WNPRedux.LogType type, string message)
         {
             Console.WriteLine($"{type}: {message}");

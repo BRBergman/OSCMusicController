@@ -12,21 +12,24 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace WinFormsApp1
 {
-	class OSCController// https://opensoundcontrol.stanford.edu/spec-1_0.html
+	class OSCController : IDisposable// https://opensoundcontrol.stanford.edu/spec-1_0.html
 	{
 		static IPAddress localip = IPAddress.Parse("127.0.0.1");
 		static int port = 9001;
-		static Rug.Osc.OscSender OSCSender = new(localip, port);
+		//static Rug.Osc.OscSender OSCSender = new(localip, port);
 		static Rug.Osc.OscReceiver OSCReceiver = new(localip, port);
+
+		const string PausePlay = "1";
+		const string Next = "2";
+		const string Prev = "3";
 		public OSCController()
 		{
-			OSCSender.Connect();
+			//OSCSender.Connect();
 			OSCReceiver.Connect();
 		}
 		~OSCController()
 		{
-			OSCSender.Dispose();
-			OSCReceiver.Dispose();
+			Dispose();
 		}
 		public void oscSend()
 		{
@@ -53,30 +56,18 @@ namespace WinFormsApp1
 
 						foreach (string str in message)
 						{
-							/*switch (str)
-							{
-								case "PausePlay":
-									MediaPlayer.PausePlay();
-									break;
-								case "Next":
-									MediaPlayer.Next();
-									break;
-								case "Prev":
-									MediaPlayer.Prev();
-									break;
-							}*/
 							if (Address == "/avatar/parameters/VRCEmote")
 							{
 
-								if (str == "1")
+								if (str == PausePlay)
 								{
 									MediaPlayer.PausePlay();
 								}
-								if ( str == "2")
+								if ( str == Next)
 								{
 									MediaPlayer.Next();
 								}
-								if ( str == "3")
+								if ( str == Prev)
 								{
 									MediaPlayer.Prev();
 								}
@@ -90,12 +81,18 @@ namespace WinFormsApp1
 			{
 				// if the socket was connected when this happens
 				// then tell the user
-				if (OSCReceiver.State == OscSocketState.Connected)
+				/*if (OSCReceiver.State == OscSocketState.Connected)
 				{
 					Console.WriteLine("Exception in listen loop");
 					Console.WriteLine(ex.Message);
-				}
+				}*/
 			}
+		}
+
+		public void Dispose()
+		{
+			//OSCSender.Dispose();
+			OSCReceiver.Dispose();
 		}
 	}
 }

@@ -17,18 +17,18 @@ namespace WinFormsApp1
 	public partial class Form1 : Form
 	{
 		OSCController oscController;
-
 		public Form1()
 		{
-
 			InitializeComponent();
 			oscController = new();
-			Thread myThread = new Thread(new ThreadStart(oscController.oscReceive));
-			myThread.Start();
+			Thread OSCThread = new Thread(new ThreadStart(oscController.oscReceive));
+			OSCThread.Start();
+			MediaPlayer.WebNowPlaying = WNPEnabled.Checked;
+			WNPRedux.Initialize(int.Parse(PortTextBox.Text), "1.0.0", logger);
+			OnOffBox.Checked = true;
 		}
 		~Form1()
 		{
-			WNPRedux.Close();
 		}
 		private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
 		{
@@ -95,6 +95,16 @@ namespace WinFormsApp1
 		private void textBox2_TextChanged(object sender, EventArgs e)
 		{
 
+		}
+
+		private void Form1_Load(object sender, EventArgs e)
+		{
+
+		}
+
+		private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			Application.Exit();
 		}
 	}
 }
