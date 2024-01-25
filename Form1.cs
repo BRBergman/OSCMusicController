@@ -10,9 +10,10 @@ namespace WinFormsApp1
      * webnowplaying spotify support        -- done
      * text box of currently playing song   -- to do
      * osc to control the program           -- done
-     * control media from vrcaht avi        -- to do
+     * control media from vrcaht avi        -- done
      * send the current song to vrc			-- to do
      * send the duration to vrc				-- to do
+     * optomise								-- always to do
     */
 	public partial class Form1 : Form
 	{
@@ -105,6 +106,8 @@ namespace WinFormsApp1
 		private void Form1_FormClosed(object sender, FormClosedEventArgs e)
 		{
 			Application.Exit();
+			OSCController.Dispose();
+			
 		}
 	}
 }

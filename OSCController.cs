@@ -12,7 +12,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace WinFormsApp1
 {
-	class OSCController : IDisposable// https://opensoundcontrol.stanford.edu/spec-1_0.html
+	class OSCController// https://opensoundcontrol.stanford.edu/spec-1_0.html
 	{
 		static IPAddress localip = IPAddress.Parse("127.0.0.1");
 		static int port = 9001;
@@ -81,18 +81,18 @@ namespace WinFormsApp1
 			{
 				// if the socket was connected when this happens
 				// then tell the user
-				/*if (OSCReceiver.State == OscSocketState.Connected)
+				if (OSCReceiver.State == OscSocketState.Connected)
 				{
 					Console.WriteLine("Exception in listen loop");
 					Console.WriteLine(ex.Message);
-				}*/
+				}
 			}
 		}
 
-		public void Dispose()
+		public static void Dispose()
 		{
 			//OSCSender.Dispose();
-			OSCReceiver.Dispose();
+			OSCReceiver.Dispose();//fix this 
 		}
 	}
 }
